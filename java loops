@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+
+class Solution {
+    public static void main(String []argh) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt(); // Number of queries
+        
+        for(int i = 0; i < t; i++) {
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            
+            int currentSum = a;
+            for(int j = 0; j < n; j++) {
+                // Math.pow returns a double, so we cast to int
+                // 2^j * b is added to the previous term's sum
+                currentSum += (Math.pow(2, j) * b);
+                System.out.print(currentSum + " ");
+            }
+            // Print a new line after each query's series
+            System.out.println();
+        }
+        in.close();
+    }
+}
