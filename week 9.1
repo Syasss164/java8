@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        
+        // Read the initial string
+        String S = in.next();
+        
+        // Read the start and end indices
+        int start = in.nextInt();
+        int end = in.nextInt();
+        
+        // Extract and print the substring
+        // Java's substring(start, end) matches the problem's requirements
+        System.out.println(S.substring(start, end));
+        
+        in.close();
+    }
+}
