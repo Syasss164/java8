@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        try {
+            // Attempt to read two integers
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            
+            // Perform division
+            System.out.println(x / y);
+            
+        } catch (InputMismatchException e) {
+            // Caught if input is not a valid 32-bit integer
+            System.out.println(e.getClass().getName());
+        } catch (ArithmeticException e) {
+            // Caught if y is zero
+            System.out.println(e);
+        } finally {
+            sc.close();
+        }
+    }
+}
