@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        
+        // Trim leading and trailing whitespace to avoid empty tokens at the start/end
+        s = s.trim();
+        
+        // If the string is empty after trimming, the token count is 0
+        if (s.length() == 0) {
+            System.out.println(0);
+            return;
+        }
+        
+        // Split the string by any sequence of non-alphabetic characters
+        String[] tokens = s.split("[^A-Za-z]+");
+        
+        // Print the number of tokens
+        System.out.println(tokens.length);
+        
+        // Print each token
+        for (String token : tokens) {
+            System.out.println(token);
+        }
+        
+        scan.close();
+    }
+}
