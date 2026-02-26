@@ -1,0 +1,38 @@
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Read initial number of elements
+        int N = sc.nextInt();
+        List<Integer> L = new ArrayList<>();
+        
+        for (int i = 0; i < N; i++) {
+            L.add(sc.nextInt());
+        }
+        
+        // Read number of queries
+        int Q = sc.nextInt();
+        
+        for (int i = 0; i < Q; i++) {
+            String queryType = sc.next();
+            if (queryType.equals("Insert")) {
+                int x = sc.nextInt(); // index
+                int y = sc.nextInt(); // value
+                L.add(x, y);
+            } else if (queryType.equals("Delete")) {
+                int x = sc.nextInt(); // index
+                L.remove(x);
+            }
+        }
+        
+        // Print the final list
+        for (Integer num : L) {
+            System.out.print(num + " ");
+        }
+        
+        sc.close();
+    }
+}
